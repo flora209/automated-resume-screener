@@ -1,4 +1,4 @@
-# 📄 Automated Resume Screener (ARS)
+# Automated Resume Screener (ARS)
 
 An NLP-powered tool that compares a resume against a job description using **semantic similarity** (not just keyword matching), and highlights which required skills are missing from the resume.
 
@@ -6,7 +6,7 @@ Built as an engineering learning project based on requirements from Cadmus Softw
 
 ---
 
-## 🚀 What It Does
+## What It Does
 
 1. **Upload a resume (PDF)** and paste in a job description
 2. The app extracts clean text from the PDF
@@ -16,13 +16,13 @@ Built as an engineering learning project based on requirements from Cadmus Softw
 
 ---
 
-## 🧠 Why Semantic Matching (Not Keyword Matching)?
+## Why Semantic Matching (Not Keyword Matching)?
 
 A resume that says *"led a team of developers"* should match a job description asking for *"team leadership experience"* — even though the exact words are different. Traditional keyword search would miss this. This tool uses **Sentence-Transformers** to convert text into vectors that represent meaning, so it can catch these matches.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -35,7 +35,7 @@ A resume that says *"led a team of developers"* should match a job description a
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ├── extractor.py   # Extracts raw text from uploaded PDF resumes
@@ -47,7 +47,7 @@ A resume that says *"led a team of developers"* should match a job description a
 
 ---
 
-## ⚙️ How to Run Locally
+## How to Run Locally
 
 1. Clone the repository
 ```bash
@@ -70,17 +70,17 @@ python -m streamlit run app.py
 
 ---
 
-## ✨ Features
+## Features
 
-- ✅ PDF resume parsing
-- ✅ Semantic (meaning-based) match scoring, not just keyword overlap
-- ✅ Skill gap analysis — see exactly what's missing from a resume
-- ✅ Simple, interactive web interface
-- ✅ Error handling for corrupted or unreadable files
+- PDF resume parsing
+- Semantic (meaning-based) match scoring, not just keyword overlap
+- Skill gap analysis — see exactly what's missing from a resume
+- Simple, interactive web interface
+- Error handling for corrupted or unreadable files
 
 ---
 
-## 🔭 Possible Future Improvements
+## Possible Future Improvements
 
 - Support `.docx` resumes in addition to PDF
 - Rank multiple resumes at once against a single job description
@@ -89,6 +89,6 @@ python -m streamlit run app.py
 
 ---
 
-## 👤 Author
+## Author
 
 Built by [flora209](https://github.com/flora209) as a hands-on project to learn NLP, semantic search, and full-stack Python development.
