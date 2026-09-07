@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --paper: #FCFBF8;
+    --ink: #23262B;
+    --muted: #8A8F98;
+    --accent: #2F6F6B;
+    --accent-soft: #E4F0EE;
+    --amber: #B9793A;
+    --amber-soft: #F6ECDF;
+    --rule: #E4E1DA;
+}
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+.stApp {
+    background-color: var(--paper);
+}
+
+/* Detyro ngjyren e tekstit kudo ne faqe, per te shmangur "white on white" */
+.stApp, .stApp p, .stApp span, .stApp label, .stApp li,
+.stMarkdown, div[data-testid="stMarkdownContainer"] p,
+div[data-testid="stWidgetLabel"] p,
+div[data-testid="stFileUploaderDropzoneInstructions"] span,
+div[data-testid="stFileUploaderDropzoneInstructions"] small {
+    color: var(--ink) !important;
+}
+
+/* Titulli - serif, si titull raporti */
+h1 {
+    font-family: 'Source Serif 4', serif !important;
+    font-weight: 600 !important;
+    color: var(--ink) !important;
+    font-size: 2.3rem !important;
+    letter-spacing: -0.01em;
+}
+
+h2, h3 {
+    font-family: 'Source Serif 4', serif !important;
+    color: var(--ink) !important;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #F5F3EE;
+    border-right: 1px solid var(--rule);
+}
+section[data-testid="stSidebar"] * {
+    color: var(--ink) !important;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
+}
+
+/* File uploader - kutia e drag-and-drop */
+div[data-testid="stFileUploaderDropzone"] {
+    background-color: #ffffff !important;
+    border-radius: 4px;
+    border: 1px solid var(--rule) !important;
+}
+
+/* Text area */
+div[data-testid="stTextArea"] textarea {
+    background-color: #ffffff !important;
+    color: var(--ink) !important;
+    border-radius: 4px;
+    border: 1px solid var(--rule) !important;
+}
+
+/* Buton - i qete, kend i vogel jo pill i plote */
+div.stButton > button {
+    background-color: var(--accent);
+    color: white !important;
+    border-radius: 6px;
+    border: none;
+    padding: 0.55rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.15s ease;
+}
+div.stButton > button:hover {
+    background-color: #245855;
+    color: white !important;
+}
+div.stButton > button p {
+    color: white !important;
+}
+
+/* Divider - vije e holle */
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 1.2rem 0;
+}
+
+/* Caption text */
+.stCaption, [data-testid="stCaptionContainer"] {
+    color: var(--muted) !important;
+}
