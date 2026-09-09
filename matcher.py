@@ -13,15 +13,14 @@ def get_embedding(text):
 
 def calculate_match_score(resume_text, job_description):
     """Krahason CV-në me job description dhe kthen një score 0-100%."""
-    # Kthejmë të dy tekstet në vektorë
     resume_embedding = get_embedding(resume_text).reshape(1, -1)
     job_embedding = get_embedding(job_description).reshape(1, -1)
 
-    # Llogarisim ngjashmërinë mes tyre
     similarity = cosine_similarity(resume_embedding, job_embedding)[0][0]
 
-    # E kthejmë në përqindje (0-100)
-    score = round(similarity * 100, 2)
+    # float(...) e kthen numrin nga numpy.float32 ne float normal Python,
+    # keshtu SQLite e ruan sakte (jo si bytes te palexueshem)
+    score = round(float(similarity) * 100, 2)
     return score
 
 
@@ -40,4 +39,3 @@ if __name__ == "__main__":
 
     match_score = calculate_match_score(sample_resume, sample_job)
     print(f"Match Score: {match_score}%")
-    

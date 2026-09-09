@@ -5,7 +5,7 @@ DB_NAME = "history.db"
 
 
 def init_db():
-    """Krijon tabelën nese s'ekziston ende - thirret njehere kur nis app-i."""
+    """Krijon tabelën nëse s'ekziston ende - thirret njëherë kur nis app-i."""
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     cursor.execute("""
@@ -23,7 +23,10 @@ def init_db():
 
 
 def save_analysis(resume_name, job_description, match_score, missing_skills):
-    """Ruan nje analize te re ne database."""
+    """Ruan një analizë të re në database."""
+    # Sigurohemi qe match_score eshte float normal Python, jo numpy.float32
+    match_score = float(match_score)
+
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     cursor.execute("""
@@ -31,7 +34,7 @@ def save_analysis(resume_name, job_description, match_score, missing_skills):
         VALUES (?, ?, ?, ?, ?)
     """, (
         resume_name,
-        job_description[:200],  # ruajme vetem nje pjese, jo gjithe tekstin
+        job_description[:200],
         match_score,
         ", ".join(missing_skills),
         datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -41,7 +44,7 @@ def save_analysis(resume_name, job_description, match_score, missing_skills):
 
 
 def get_all_history():
-    """Kthen te gjitha analizat e ruajtura, me te fundit ne krye."""
+    """Kthen të gjitha analizat e ruajtura, me të fundit në krye."""
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     cursor.execute("SELECT resume_name, match_score, missing_skills, timestamp FROM analysis_history ORDER BY id DESC")
